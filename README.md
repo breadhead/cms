@@ -6,6 +6,13 @@ Simple and powerful headless CMS provide fancy admin interface and reliable back
 
 `yarn add @breadhead/cms`
 
+```js
+// server.js
+const { cms } = require('@breadhead/cms')
+
+cms(4343)
+```
+
 Enjoy!
 
 ## Contributing
@@ -14,27 +21,7 @@ Install project
 ```console
 git clone ...
 yarn
-yarn link
 yarn dev
-```
-
-Create the other project and link CMS
-```console
-mkdir test-project
-cd test-project
-yarn init
-yarn link @breadhead/cms
-```
-
-```js
-// test-project/index.js
-const { cms } = require('@breadhead/cms')
-
-cms(3434)
-```
-
-```console
-node index.js
 ```
 
 You are beautiful!
