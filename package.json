@@ -1,0 +1,23 @@
+{
+  "name": "@breadhead/cms",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "repository": "git@github.com:breadhead/cms.git",
+  "license": "MIT",
+  "devDependencies": {
+    "@solid-soda/scripts": "^1.2.4",
+    "typescript": "^3.3.4000"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn soda lint-staged",
+      "commit-msg": "yarn soda commitlint"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "s": "yarn soda"
+  }
+}
