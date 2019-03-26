@@ -3,4 +3,4 @@ import { Option } from 'tsoption'
 import { Api } from './Api'
 
 export const createApi = (token: Option<string>) =>
-  new Api(token, 'localhost:3434')
+  new Api(token, process.env.BACK_URL || '')

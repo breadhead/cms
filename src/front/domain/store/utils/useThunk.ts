@@ -1,8 +1,8 @@
 import { useDispatch } from 'redux-react-hook'
 
-type Action = (...values: any[]) => any
+type Action = <T extends any[], R>(...values: T) => R
 
-export const useThunk = (action: Action) => {
+export const useThunk = <T extends any[], R>(action: Action) => {
   const dispatch = useDispatch()
-  return (...values: any[]) => dispatch(action(...values))
+  return (...values: T): R => dispatch(action(...values))
 }
