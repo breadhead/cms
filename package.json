@@ -15,7 +15,8 @@
     "nodemon": "^1.18.10",
     "parcel-bundler": "^1.12.3",
     "rimraf": "^2.6.3",
-    "typescript": "^3.3.4000"
+    "typescript": "^3.3.4000",
+    "utility-types": "^3.4.1"
   },
   "husky": {
     "hooks": {
@@ -31,11 +32,13 @@
     "types": "tsc --noEmit",
     "build:back": "babel ./src --out-dir dist --extensions '.ts' --ignore 'src/front/**/*'",
     "build:front": "parcel build ./src/front/index.ts --out-dir dist/front",
-    "build": "rimraf ./dist && yarn build:back && yarn build:front",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build": "rimraf ./dist && yarn build:back && yarn build:front && yarn build:types",
     "dev:back": "yarn build:back --watch",
     "dev:front": "parcel watch ./src/front/index.ts --out-dir dist/front",
+    "dev:types": "tsc --emitDeclarationOnly --watch",
     "dev:run": "NODE_ENV=development nodemon --config ./nodemon.json",
-    "dev": "rimraf .cache && concurrently --kill-others 'yarn dev:back' 'yarn dev:front' 'yarn dev:run'"
+    "dev": "rimraf .cache  && concurrently --kill-others 'yarn dev:back' 'yarn dev:front' 'yarn dev:types' 'yarn dev:run'"
   },
   "dependencies": {
     "@types/lodash": "^4.14.123",

@@ -1,7 +1,7 @@
-import ReactDOM from 'react-dom'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
-import React from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import { initializeStore } from '../domain/store/initializeStore'
 

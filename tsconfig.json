@@ -1,13 +1,17 @@
 {
   "compilerOptions": {
-    "allowJs": true,
+    "lib": ["es2017", "dom"],
+    "module": "commonjs",
+    "declaration": true,
+    "noLib": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "outDir": "dist",
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "jsx": "preserve",
-    "lib": ["dom", "es2017"],
-    "module": "esnext",
     "moduleResolution": "node",
-    "noEmit": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitAny": true,
@@ -17,6 +21,7 @@
     "sourceMap": true,
     "strict": true,
     "target": "esnext",
+
     "plugins": [
       {
         "name": "typescript-plugin-css-modules",
