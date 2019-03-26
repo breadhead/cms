@@ -10,7 +10,14 @@ Simple and powerful headless CMS provide fancy admin interface and reliable back
 // server.js
 const { cms } = require('@breadhead/cms')
 
-cms(4343)
+const entities = /* ... */
+const firstPlugin = /* ... */
+const otherPlugins = /* ... */
+
+cms(entities)
+  .use(firstPlugin)
+  .use(...otherPLugins)
+  .run(4343)
 ```
 
 Enjoy!

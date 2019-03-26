@@ -1,3 +1,6 @@
 const { cms } = require('../dist')
 
-cms(3434)
+cms([])
+  .use('fake plugin')
+  .use('another fake plugin', 'fake fake plugin =)')
+  .run(3434)
