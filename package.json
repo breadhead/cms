@@ -31,11 +31,13 @@
     "s": "yarn soda",
     "build:back": "babel ./src --out-dir dist --extensions '.ts' --ignore 'src/front/**/*'",
     "build:front": "parcel build ./src/front/index.ts --out-dir dist/front",
-    "build": "rimraf ./dist && yarn build:back && yarn build:front",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build": "rimraf ./dist && yarn build:back && yarn build:front && yarn build:types",
     "dev:back": "yarn build:back --watch",
     "dev:front": "parcel watch ./src/front/index.ts --out-dir dist/front",
+    "dev:types": "tsc --emitDeclarationOnly --watch",
     "dev:run": "NODE_ENV=development nodemon --config ./nodemon.json",
-    "dev": "rimraf .cache && concurrently --kill-others 'yarn dev:back' 'yarn dev:front' 'yarn dev:run'"
+    "dev": "rimraf .cache && concurrently --kill-others 'yarn dev:back' 'yarn dev:front' 'yarn dev:types' 'yarn dev:run'"
   },
   "dependencies": {
     "express": "^4.16.4"
