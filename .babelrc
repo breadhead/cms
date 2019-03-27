@@ -1,3 +1,16 @@
 {
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./src/"],
+        "alias": {
+          "@front": "./src/front",
+          "@back": "./src/back",
+          "@shared": "./src/shared"
+        }
+      }
+    ]
+  ],
   "presets": ["@babel/env", "@babel/preset-typescript"]
 }

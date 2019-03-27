@@ -1,1 +1,1 @@
-console.log('Breadheadless Frontend')
+import './components/App'

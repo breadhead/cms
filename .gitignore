@@ -2,3 +2,5 @@ node_modules
 dist
 *.log
 .cache
+.vscode
+.env

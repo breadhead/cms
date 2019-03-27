@@ -11,9 +11,16 @@
     "@babel/preset-typescript": "^7.3.3",
     "@solid-soda/scripts": "^1.2.4",
     "@types/express": "^4.16.1",
+    "@types/lodash": "^4.14.123",
+    "@types/react": "^16.8.8",
+    "@types/react-dom": "^16.8.3",
+    "@types/react-redux": "^7.0.5",
+    "@types/react-router-dom": "^4.3.1",
+    "babel-plugin-module-resolver": "^3.2.0",
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.10",
     "parcel-bundler": "^1.12.3",
+    "redux-devtools-extension": "^2.13.8",
     "rimraf": "^2.6.3",
     "typescript": "^3.3.4000",
     "utility-types": "^3.4.1"
@@ -29,6 +36,7 @@
   },
   "scripts": {
     "s": "yarn soda",
+    "types": "tsc --noEmit",
     "build:back": "babel ./src --out-dir dist --extensions '.ts' --ignore 'src/front/**/*'",
     "build:front": "parcel build ./src/front/index.ts --out-dir dist/front",
     "build:types": "tsc --emitDeclarationOnly",
@@ -37,9 +45,19 @@
     "dev:front": "parcel watch ./src/front/index.ts --out-dir dist/front",
     "dev:types": "tsc --emitDeclarationOnly --watch",
     "dev:run": "NODE_ENV=development nodemon --config ./nodemon.json",
-    "dev": "rimraf .cache && concurrently --kill-others 'yarn dev:back' 'yarn dev:front' 'yarn dev:types' 'yarn dev:run'"
+    "dev": "rimraf .cache  && concurrently --kill-others 'yarn dev:back' 'yarn dev:front' 'yarn dev:types' 'yarn dev:run'"
   },
   "dependencies": {
-    "express": "^4.16.4"
+    "axios": "^0.18.0",
+    "express": "^4.16.4",
+    "react": "^16.4.0-0",
+    "react-dom": "^16.8.5",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.1",
+    "redux-clear": "^1.1.2",
+    "redux-react-hook": "^3.2.1",
+    "redux-thunk": "^2.3.0",
+    "tsoption": "^0.7.0"
   }
 }
