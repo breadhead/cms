@@ -1,5 +1,5 @@
 import { Body, Controller } from '@nestjs/common';
-import { PostNoCreate } from './utils/PostNoCreate';
+import { PostNoCreate } from '../utils/presentation/PostNoCreate';
 import { AuthRequest } from './request/AuthRequest';
 import { TokenResponse } from './response/TokenResponse';
 

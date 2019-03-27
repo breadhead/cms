@@ -6,7 +6,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { JwtOptionsFactory } from './infrastructure/JwtOptionsFactory';
 import { PasswordEncoder } from './infrastructure/PasswordEncoder/PasswordEncoder';
 import { BcryptPasswordEncoder } from './infrastructure/PasswordEncoder/BcryptPasswordEncoder';
-import { AuthController } from './AuthController';
+import { AuthController } from './presentation/controller/AuthController';
 
 @Module({
   imports: [
