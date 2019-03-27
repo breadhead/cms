@@ -1,7 +1,7 @@
 import { Module, NestModule } from '@nestjs/common'
 import { ConfigModule } from './config/config.module'
 
-import { FrontendController } from './FrontendController'
+import { FrontendController } from './presentation/controller/FrontendController'
 import { JwtModule } from '@nestjs/jwt'
 import { JwtOptionsFactory } from './infrastructure/JwtOptionsFactory'
 import { PasswordEncoder } from './infrastructure/PasswordEncoder/PasswordEncoder'
