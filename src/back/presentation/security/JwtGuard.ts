@@ -1,7 +1,7 @@
 import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common'
 import { Option } from 'tsoption'
-import { Authenticator } from 'src/back/application/Authenticator'
-import { TokenPayload } from 'src/back/application/dto/TokenPayload'
+import { Authenticator } from '../../application/Authenticator'
+import { TokenPayload } from '../../application/dto/TokenPayload'
 
 @Injectable()
 export class JwtGuard implements CanActivate {

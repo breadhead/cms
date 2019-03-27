@@ -1,5 +1,5 @@
 import { createParamDecorator } from '@nestjs/common'
-import { TokenPayload } from 'src/back/application/dto/TokenPayload'
+import { TokenPayload } from '../../application/dto/TokenPayload'
 
 export const CurrentUser = createParamDecorator(
   async (_, req): Promise<TokenPayload> => {

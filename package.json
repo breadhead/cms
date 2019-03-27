@@ -54,6 +54,7 @@
     "@nestjs/core": "^6.0.4",
     "@nestjs/jwt": "^6.0.0",
     "@nestjs/platform-express": "^6.0.4",
+    "@nestjs/swagger": "^3.0.2",
     "@solid-soda/config": "^1.1.6",
     "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
@@ -68,6 +69,7 @@
     "redux-react-hook": "^3.2.1",
     "redux-thunk": "^2.3.0",
     "reflect-metadata": "^0.1.13",
+    "swagger-ui-express": "^4.0.2",
     "tsoption": "^0.7.0"
   }
 }
