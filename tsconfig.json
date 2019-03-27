@@ -29,12 +29,6 @@
           "customMatcher": "\\.css$"
         }
       }
-    ],
-    "paths": {
-      "*": ["types/*"],
-      "@front/*": ["src/front/*"],
-      "@back/*": ["src/back/*"],
-      "@shared/*": ["src/shared/*"]
-    }
+    ]
   }
 }

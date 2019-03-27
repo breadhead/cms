@@ -48,11 +48,14 @@
     "dev": "rimraf .cache  && concurrently --kill-others 'yarn dev:back' 'yarn dev:front' 'yarn dev:types' 'yarn dev:run'"
   },
   "dependencies": {
+    "@breadhead/detil-ts": "^1.0.1",
     "@nestjs/common": "^6.0.4",
     "@nestjs/core": "^6.0.4",
+    "@nestjs/jwt": "^6.0.0",
     "@nestjs/platform-express": "^6.0.4",
     "@solid-soda/config": "^1.1.6",
     "axios": "^0.18.0",
+    "bcryptjs": "^2.4.3",
     "express": "^4.16.4",
     "react": "^16.4.0-0",
     "react-dom": "^16.8.5",

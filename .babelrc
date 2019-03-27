@@ -3,12 +3,7 @@
     [
       "module-resolver",
       {
-        "root": ["./src/"],
-        "alias": {
-          "@front": "./src/front",
-          "@back": "./src/back",
-          "@shared": "./src/shared"
-        }
+        "root": ["./src/"]
       }
     ]
   ],
