@@ -1,6 +1,6 @@
 import { Body, Controller } from '@nestjs/common'
 import { Authenticator } from 'src/back/application/Authenticator'
-import { PostNoCreate } from 'src/back/utils/presentation/PostNoCreate'
+import { PostNoCreate } from 'src/back/presentation/exception/PostNoCreate'
 import { AuthRequest } from '../request/AuthRequest'
 import { TokenResponse } from '../response/TokenResponse'
 
