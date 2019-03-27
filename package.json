@@ -37,7 +37,7 @@
   "scripts": {
     "s": "yarn soda",
     "types": "tsc --noEmit",
-    "build:back": "babel ./src --out-dir dist --extensions '.ts' --ignore 'src/front/**/*'",
+    "build:back": "tsc",
     "build:front": "parcel build ./src/front/index.ts --out-dir dist/front",
     "build:types": "tsc --emitDeclarationOnly",
     "build": "rimraf ./dist && yarn build:back && yarn build:front && yarn build:types",
@@ -48,6 +48,9 @@
     "dev": "rimraf .cache  && concurrently --kill-others 'yarn dev:back' 'yarn dev:front' 'yarn dev:types' 'yarn dev:run'"
   },
   "dependencies": {
+    "@nestjs/common": "^6.0.4",
+    "@nestjs/core": "^6.0.4",
+    "@nestjs/platform-express": "^6.0.4",
     "axios": "^0.18.0",
     "express": "^4.16.4",
     "react": "^16.4.0-0",
@@ -58,6 +61,7 @@
     "redux-clear": "^1.1.2",
     "redux-react-hook": "^3.2.1",
     "redux-thunk": "^2.3.0",
+    "reflect-metadata": "^0.1.13",
     "tsoption": "^0.7.0"
   }
 }
