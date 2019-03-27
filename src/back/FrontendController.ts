@@ -1,7 +1,7 @@
 import { Controller, Get } from '@nestjs/common'
 
 @Controller('')
-export default class FrontendController {
+export class FrontendController {
   @Get('*')
   public async index() {
     const result = `
