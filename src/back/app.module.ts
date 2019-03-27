@@ -7,6 +7,7 @@ import { JwtOptionsFactory } from './infrastructure/JwtOptionsFactory';
 import { PasswordEncoder } from './infrastructure/PasswordEncoder/PasswordEncoder';
 import { BcryptPasswordEncoder } from './infrastructure/PasswordEncoder/BcryptPasswordEncoder';
 import { AuthController } from './presentation/controller/AuthController';
+import { Authenticator } from './application/Authenticator';
 
 @Module({
   imports: [

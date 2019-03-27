@@ -1,7 +1,8 @@
 import { Body, Controller } from '@nestjs/common';
-import { PostNoCreate } from '../utils/presentation/PostNoCreate';
-import { AuthRequest } from './request/AuthRequest';
-import { TokenResponse } from './response/TokenResponse';
+import { Authenticator } from 'src/back/application/Authenticator';
+import { PostNoCreate } from 'src/back/utils/presentation/PostNoCreate';
+import { AuthRequest } from '../request/AuthRequest';
+import { TokenResponse } from '../response/TokenResponse';
 
 @Controller('user/auth')
 export class AuthController {

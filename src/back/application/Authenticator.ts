@@ -6,6 +6,7 @@ import { PasswordEncoder } from '../infrastructure/PasswordEncoder/PasswordEncod
 import { TokenPayload } from './dto/TokenPayload';
 import { InvalidCredentialsException } from './exception/InvalidCredentialsException';
 import { InvalidTokenException } from './exception/InvalidTokenException';
+import { EntityNotFoundException } from '../utils/domain/EntityNotFoundException';
 
 @Injectable()
 export class Authenticator {
@@ -26,7 +27,14 @@ export class Authenticator {
   }
 
   public async signIn(login: string, password: string): Promise<string> {
-    const user = await this.userRepo.getOne(login);
+    const testUser = new User('admin');
+    testUser.changePassword('admin', this.passwordEncoder);
+    const user = [testUser].find(user => user.login === login);
+    if (!user) {
+      throw new EntityNotFoundException(User.name, {
+        login
+      });
+    }
     const passwordValid = await user.isPasswordValid(
       password,
       this.passwordEncoder
