@@ -1,6 +1,6 @@
-import { Injectable } from '@nestjs/common';
-import { JwtModuleOptions, JwtOptionsFactory as Factory } from '@nestjs/jwt';
-import { Configuration } from '../config/Configuration';
+import { Injectable } from '@nestjs/common'
+import { JwtModuleOptions, JwtOptionsFactory as Factory } from '@nestjs/jwt'
+import { Configuration } from '../config/Configuration'
 
 @Injectable()
 export class JwtOptionsFactory implements Factory {
@@ -10,11 +10,11 @@ export class JwtOptionsFactory implements Factory {
     return {
       secretOrPrivateKey: this.config.getStringOrElse(
         'APP_SECRET',
-        'NotSoSecret'
+        'NotSoSecret',
       ),
       signOptions: {
-        expiresIn: '365 days'
-      }
-    };
+        expiresIn: '365 days',
+      },
+    }
   }
 }

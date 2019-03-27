@@ -1,8 +1,8 @@
-import { TokenModel } from 'src/shared/models/user/TokenModel';
+import { TokenModel } from 'src/shared/models/user/TokenModel'
 
 export class TokenResponse implements TokenModel {
-  public readonly token: string;
+  public readonly token: string
   constructor(token: string) {
-    this.token = token;
+    this.token = token
   }
 }

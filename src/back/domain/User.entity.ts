@@ -1,25 +1,25 @@
-import { PasswordEncoder } from '../infrastructure/PasswordEncoder/PasswordEncoder';
+import { PasswordEncoder } from '../infrastructure/PasswordEncoder/PasswordEncoder'
 
 export class User {
-  public readonly login: string;
+  public readonly login: string
 
-  private password: string = '';
+  private password: string = ''
 
   public constructor(login: string) {
-    this.login = login;
+    this.login = login
   }
 
   public async changePassword(
     rawPassword: string,
-    encoder: PasswordEncoder
+    encoder: PasswordEncoder,
   ): Promise<void> {
-    this.password = await encoder.encodePassword(rawPassword);
+    this.password = await encoder.encodePassword(rawPassword)
   }
 
   public async isPasswordValid(
     rawPassword: string,
-    encoder: PasswordEncoder
+    encoder: PasswordEncoder,
   ): Promise<boolean> {
-    return encoder.isPasswordValid(this.password, rawPassword);
+    return encoder.isPasswordValid(this.password, rawPassword)
   }
 }

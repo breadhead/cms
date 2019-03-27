@@ -1,31 +1,32 @@
-import { Module, NestModule } from '@nestjs/common';
-import { ConfigModule } from './config/config.module';
+import { Module, NestModule } from '@nestjs/common'
+import { ConfigModule } from './config/config.module'
 
-import FrontendController from './FrontendController';
-import { JwtModule } from '@nestjs/jwt';
-import { JwtOptionsFactory } from './infrastructure/JwtOptionsFactory';
-import { PasswordEncoder } from './infrastructure/PasswordEncoder/PasswordEncoder';
-import { BcryptPasswordEncoder } from './infrastructure/PasswordEncoder/BcryptPasswordEncoder';
-import { AuthController } from './presentation/controller/AuthController';
-import { Authenticator } from './application/Authenticator';
+import FrontendController from './FrontendController'
+import { JwtModule } from '@nestjs/jwt'
+import { JwtOptionsFactory } from './infrastructure/JwtOptionsFactory'
+import { PasswordEncoder } from './infrastructure/PasswordEncoder/PasswordEncoder'
+import { BcryptPasswordEncoder } from './infrastructure/PasswordEncoder/BcryptPasswordEncoder'
+import { AuthController } from './presentation/controller/AuthController'
+import { Authenticator } from './application/Authenticator'
+import { JwtGuard } from './presentation/security/JwtGuard'
 
 @Module({
   imports: [
     JwtModule.registerAsync({
       imports: [ConfigModule],
-      useClass: JwtOptionsFactory
-    })
+      useClass: JwtOptionsFactory,
+    }),
   ],
   controllers: [FrontendController, AuthController],
   providers: [
     {
       provide: PasswordEncoder,
-      useClass: BcryptPasswordEncoder
+      useClass: BcryptPasswordEncoder,
     },
     Authenticator,
-    JwtGuard
+    JwtGuard,
   ],
-  exports: [JwtGuard, Authenticator]
+  exports: [JwtGuard, Authenticator],
 })
 export class AppModule implements NestModule {
   public configure() {
