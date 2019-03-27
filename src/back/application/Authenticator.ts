@@ -49,6 +49,7 @@ export class Authenticator {
     return token
   }
 
+  // TODO: replace it with repository or another way to get user
   private getUser(login: string) {
     const testUser = new User('admin')
     testUser.changePassword('admin', this.passwordEncoder)
