@@ -26,7 +26,6 @@ import { JwtGuard } from './presentation/security/JwtGuard'
     Authenticator,
     JwtGuard,
   ],
-  exports: [JwtGuard, Authenticator],
 })
 export class AppModule implements NestModule {
   public configure() {
