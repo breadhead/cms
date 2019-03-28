@@ -1,20 +1,16 @@
 import express from 'express'
 import { join } from 'path'
+import { NestFactory } from '@nestjs/core'
 
-// TODO: express is a temporary solution for proof of concept
-const app = express()
+import { AppModule } from './app.module'
+import { setupCors } from './addons/setupCors'
+import { setupSwagger } from './addons/setupSwagger'
 
-app.use(express.static(join(__dirname, '..', 'front')))
+export const bootstrap = async (port = 3000) => {
+  const app = await NestFactory.create(AppModule)
 
-export const bootstrap = (port: number) => {
-  app.get('/', (_, res) =>
-    res.send(`
-  <div>
-    <div id="root"></div>
-    <script src="/index.js" ></script>
-  </div>
-  `),
-  )
-
-  app.listen(port, () => console.log(`Breadheadless CMS on ${port}`))
+  app.use(express.static(join(__dirname, '..', 'front')))
+  setupCors(app)
+  setupSwagger(app, 'docs')
+  await app.listen(port)
 }
